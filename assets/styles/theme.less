@@ -12,7 +12,31 @@ body{
 	#gradient .radial(@greenLight, @greenDark);
 }
 
-header{
+.inline-list{
+	margin-left: 0;
+	list-style: none;
+
+	li{
+		display: inline;
+
+		&::after{
+			content: ", ";
+		}
+
+		&.heading{
+			font-weight: bold;
+
+			&::after{
+				content: "";
+			}
+		}
+	}
+}
+
+/*
+ * Header
+ */
+#header{
 	margin: 3em auto;
 
 	a{
@@ -64,13 +88,17 @@ header{
 	}
 }
 
-article, aside{
+/*
+ * List Content
+ */
+article, .article, aside{
 	#translucent .background(#fff, .4);
 	.border-radius(2px);
 	.box-shadow(0 0 @gridGutterWidth @greenDark);
 }
 
 article h2,
+.article header,
 .menu > li{
 	#translucent .background(#fff, .4);
 	.border-radius(2px 2px 0 0);
@@ -83,7 +111,7 @@ article h2,
 	}
 }
 
-article{
+article, .article{
 	height: 200px;
 	.transition(box-shadow .5s ease-out);
 	margin-bottom: @gridGutterWidth;
@@ -92,15 +120,27 @@ article{
 		.box-shadow(0 0 @gridGutterWidth darken(@green, 35%));
 	}
 
+	.excerpt, .content{
+		padding: @gridGutterWidth / 2;
+	}
+
 	.excerpt{
 		max-height: 100px;
 		overflow-y: scroll;
-		padding: @gridGutterWidth / 2;
 	}
 }
 
-aside{
+.navigation{
+	header a{
+		display: inline-block;
+		width: 50%;
+	}
+}
 
+/*
+ * Right sidebar
+ */
+aside{
 	img{
 		.transition(box-shadow .5s ease-out);
 
