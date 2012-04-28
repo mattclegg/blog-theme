@@ -1,0 +1,70 @@
+@import '../../vendor/bootstrap/less/bootstrap.less';
+
+body{
+	#gradient .radial(#54A836, #008628);
+}
+
+h1{
+	color: #fff;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	font-size: 3em;
+	margin: 1.5em auto;
+
+	&::after, &::before{
+		color: @textColor;
+		font-family: "Courier New", monospace;
+		font-size: .8em;
+	}
+	&::before{
+		content: '{"title": "';
+	}
+	&::after{
+		content: '"};';
+	}
+}
+
+article,
+aside{
+	#translucent .background(#fff, .4);
+	.box-shadow(0 0 20px darken(#008628, 10%));
+	.border-radius(2px);
+	margin-bottom: 20px;
+	min-height: 250px;
+
+	h2{
+		#translucent .background(#fff, .4);
+		.border-radius(2px 2px 0 0);
+		font-size: 1.4em;
+		padding: 5px;
+
+		a{
+			display: block;
+		}
+	}
+}
+
+article{
+	.transition(box-shadow .5s ease-out);
+
+	&:hover, &:focus{
+		.box-shadow(0 0 20px darken(#008628, 35%));
+	}
+}
+
+aside{
+	min-height: 0;
+
+	.widget{
+		list-style: none;
+
+		> div, > ol, > ul{
+			display: none;
+		}
+	}
+
+	.widget_rss{
+		.widgettitle .rsswidget:first-child{
+			display: none;
+		}
+	}
+}
