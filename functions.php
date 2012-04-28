@@ -27,6 +27,7 @@ register_sidebar(array(
 register_sidebar(array(
     'id' => 'sidebar-common-bottom',
     'name' => 'Sidebar Common (Bottom)',
+    'before_widget' => '<li id="%1$s" class="widget widget-compact %2$s">',
 ));
 
 function theme_init_styles(){

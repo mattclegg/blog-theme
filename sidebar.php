@@ -1,11 +1,6 @@
-<nav>
-    <?php dynamic_sidebar('sidebar-common-top') ?>
+<a href="#slash-me" rel="me" class="about"><?php echo get_avatar(get_option('admin_email'), 140) ?></a>
 
-    <?php if (is_single()): ?>
-    <?php dynamic_sidebar('sidebar-single') ?>
-    <?php else: ?>
-    <?php dynamic_sidebar('sidebar-default') ?>
-    <?php endif ?>
-
-    <?php dynamic_sidebar('sidebar-common-bottom') ?>
-</nav>
+<?php wp_nav_menu(array(
+    'navigation' => 'navigation',
+    'container' => 'nav',
+)) ?>

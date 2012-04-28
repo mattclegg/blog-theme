@@ -1,32 +1,6 @@
-// CSS Reset
-@import "../../vendor/bootstrap/less/reset.less";
-
+@import "fonts.less";
 @import "variables.less";
-@import "../../vendor/bootstrap/less/mixins.less";
-
-@import "../../vendor/bootstrap/less/scaffolding.less";
-
-@import "../../vendor/bootstrap/less/type.less";
-@import "../../vendor/bootstrap/less/code.less";
-//@import "../../vendor/bootstrap/less/forms.less";
-
-//@import "../../vendor/bootstrap/less/buttons.less";
-//@import "../../vendor/bootstrap/less/button-groups.less";
-//@import "../../vendor/bootstrap/less/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
-
-//@import "../../vendor/bootstrap/less/navs.less";
-//@import "../../vendor/bootstrap/less/navbar.less";
-@import "../../vendor/bootstrap/less/breadcrumbs.less";
-@import "../../vendor/bootstrap/less/pagination.less";
-@import "../../vendor/bootstrap/less/pager.less";
-
-
-@import "../../vendor/bootstrap/less/thumbnails.less";
-//@import "../../vendor/bootstrap/less/accordion.less";
-//@import "../../vendor/bootstrap/less/carousel.less";
-
-// Utility classes
-@import "../../vendor/bootstrap/less/utilities.less"; // Has to be last to override when necessary
+@import "bootstrap.less";
 
 // Generating grid
 #grid > .core(@gridColumnWidth, @gridGutterWidth);
@@ -35,64 +9,116 @@
 }
 
 body{
-	#gradient .radial(#54A836, #008628);
+	#gradient .radial(@greenLight, @greenDark);
 }
 
-h1{
-	color: #fff;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-	font-size: 3em;
-	margin: 1.5em auto;
+header{
+	margin: 3em auto;
 
-	&::after, &::before{
-		color: @textColor;
-		font-family: "Courier New", monospace;
-		font-size: .8em;
+	h1,
+	blockquote{
+		&::after, &::before{
+			color: @textColor;
+			font-family: @monoFontFamily;
+			font-size: .8em;
+		}
 	}
-	&::before{
-		content: '{"title": "';
-	}
-	&::after{
-		content: '"};';
-	}
-}
 
-article,
-aside{
-	#translucent .background(#fff, .4);
-	.box-shadow(0 0 20px darken(#008628, 10%));
-	.border-radius(2px);
-	margin-bottom: 20px;
-	min-height: 250px;
-
-	h2{
-		#translucent .background(#fff, .4);
-		.border-radius(2px 2px 0 0);
-		font-size: 1.4em;
-		padding: 5px;
+	h1{
+		color: #fff;
+		font-size: 2.7em;
 
 		a{
-			display: block;
+			color: @linkColorHover;
+			text-decoration: none;
+
+			&:hover, &:focus{
+				text-shadow: 0 0 10px #fff;
+
+				color: darken(@white, 9%);
+				text-decoration: none;
+			}
+		}
+
+		&::before{
+			content: '{"title": "';
+		}
+		&::after{
+			content: '"};';
+		}
+	}
+
+	blockquote{
+		border: none;
+		font-family: @monoFontFamily;
+
+		&::before{
+			content: '{"tags": [';
+			font-size: 1em;
+		}
+		&::after{
+			content: ']};';
+			font-size: 1em;
 		}
 	}
 }
 
+article, aside{
+	#translucent .background(#fff, .4);
+	.border-radius(2px);
+	.box-shadow(0 0 @gridGutterWidth @greenDark);
+}
+
+article h2,
+.menu > li{
+	#translucent .background(#fff, .4);
+	.border-radius(2px 2px 0 0);
+	font-size: 1.2em;
+	padding: @gridGutterWidth / 4;
+
+	& > a{
+		display: block;
+		.text-overflow();
+	}
+}
+
 article{
+	height: 200px;
 	.transition(box-shadow .5s ease-out);
+	margin-bottom: @gridGutterWidth;
 
 	&:hover, &:focus{
-		.box-shadow(0 0 20px darken(#008628, 35%));
+		.box-shadow(0 0 @gridGutterWidth darken(@green, 35%));
+	}
+
+	h2, .excerpt{
+		padding: @gridGutterWidth / 2;
+	}
+
+	.excerpt{
+		max-height: 100px;
+		overflow-y: scroll;
 	}
 }
 
 aside{
-	min-height: 0;
 
-	.widget{
+	img{
+		.transition(box-shadow .5s ease-out);
+
+		&:hover, &:focus{
+			.box-shadow(0 0 25px #fff);
+		}
+	}
+
+	.widget, .menu{
 		list-style: none;
+		margin: 0;
+	}
 
+	.widget-compact{
 		> div, > ol, > ul{
-			display: none;
+		display: none;
 		}
 	}
 
@@ -100,5 +126,32 @@ aside{
 		.widgettitle .rsswidget:first-child{
 			display: none;
 		}
+	}
+
+  .menu-item{
+	  position: relative;
+
+	  a::after{
+		  font-family: JustVectorRegular;
+		  font-size: 2em;
+		  position: absolute;
+		  right: 5px;
+	  }
+
+		a[href$='/feed/']::after{
+			content: "*";
+			font-size: 1.8em;
+		}
+		a[href*='twitter.com']::after{
+			content: "_";
+		}
+
+		a[href*='flickr.com']::after{
+			content: "b";
+		}
+
+    a[href*='github.com']::after{
+	    content: "j";
+    }
 	}
 }
