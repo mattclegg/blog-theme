@@ -1,4 +1,38 @@
-@import '../../vendor/bootstrap/less/bootstrap.less';
+// CSS Reset
+@import "../../vendor/bootstrap/less/reset.less";
+
+@import "variables.less";
+@import "../../vendor/bootstrap/less/mixins.less";
+
+@import "../../vendor/bootstrap/less/scaffolding.less";
+
+@import "../../vendor/bootstrap/less/type.less";
+@import "../../vendor/bootstrap/less/code.less";
+//@import "../../vendor/bootstrap/less/forms.less";
+
+//@import "../../vendor/bootstrap/less/buttons.less";
+//@import "../../vendor/bootstrap/less/button-groups.less";
+//@import "../../vendor/bootstrap/less/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+//@import "../../vendor/bootstrap/less/navs.less";
+//@import "../../vendor/bootstrap/less/navbar.less";
+@import "../../vendor/bootstrap/less/breadcrumbs.less";
+@import "../../vendor/bootstrap/less/pagination.less";
+@import "../../vendor/bootstrap/less/pager.less";
+
+
+@import "../../vendor/bootstrap/less/thumbnails.less";
+//@import "../../vendor/bootstrap/less/accordion.less";
+//@import "../../vendor/bootstrap/less/carousel.less";
+
+// Utility classes
+@import "../../vendor/bootstrap/less/utilities.less"; // Has to be last to override when necessary
+
+// Generating grid
+#grid > .core(@gridColumnWidth, @gridGutterWidth);
+.container {
+	.container-fixed();
+}
 
 body{
 	#gradient .radial(#54A836, #008628);
