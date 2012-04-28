@@ -75,7 +75,7 @@ article h2,
 	#translucent .background(#fff, .4);
 	.border-radius(2px 2px 0 0);
 	font-size: 1.2em;
-	padding: @gridGutterWidth / 4;
+	padding: @gridGutterWidth / 2;
 
 	& > a{
 		display: block;
@@ -92,13 +92,10 @@ article{
 		.box-shadow(0 0 @gridGutterWidth darken(@green, 35%));
 	}
 
-	h2, .excerpt{
-		padding: @gridGutterWidth / 2;
-	}
-
 	.excerpt{
 		max-height: 100px;
 		overflow-y: scroll;
+		padding: @gridGutterWidth / 2;
 	}
 }
 
