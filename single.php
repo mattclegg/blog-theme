@@ -7,6 +7,10 @@
             <article <?php post_class() ?>>
                 <h2><a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title()) ?>" rel="bookmark"><?php the_title() ?></a></h2>
 
+                <?php if (has_post_thumbnail()): ?>
+                <div class="post-cover"><?php the_post_thumbnail('cover') ?></div>
+                <?php endif ?>
+
                 <div class="content">
                     <?php the_content() ?>
                 </div>

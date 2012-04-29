@@ -3,6 +3,7 @@
 add_theme_support('post-thumbnails');
 add_theme_support('automatic-feed-links');
 add_image_size('cover-medium', 380, 100, false);
+add_image_size('cover', 780, 250, false);
 
 add_action('init', 'theme_init_styles');
 
