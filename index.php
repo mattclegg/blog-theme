@@ -47,7 +47,7 @@
 
                             <ul class="inline-list">
                                 <li class="heading">Sinon, les archives annuelles :</li>
-                                <?php wp_get_archives('type=yearly&show_post_count=true') ?>
+                                <?php wp_get_archives(array('type' => 'yearly')) ?>
                             </ul>
                         </div>
                     </div>
