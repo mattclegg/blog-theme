@@ -116,12 +116,24 @@ article, .article{
 	.transition(box-shadow .5s ease-out);
 	margin-bottom: @gridGutterWidth;
 
+	.single &{
+		height: auto;
+	}
+
 	&:hover, &:focus{
 		.box-shadow(0 0 @gridGutterWidth darken(@green, 35%));
 	}
 
 	.excerpt, .content{
 		padding: @gridGutterWidth / 2;
+
+		a{
+			text-decoration: underline;
+
+			&:hover, &:focus{
+				text-decoration: none;
+			}
+		}
 	}
 
 	.excerpt{
