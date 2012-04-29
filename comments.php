@@ -14,6 +14,6 @@
 </div>
 
 <div class="article">
-    <?php comment_form() ?>
+    <?php theme_comment_form() ?>
 </div>
 <?php endif ?>

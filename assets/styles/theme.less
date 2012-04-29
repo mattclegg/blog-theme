@@ -34,6 +34,21 @@ body{
 	}
 }
 
+/*
+ * Bootstrap override
+ */
+label{
+	cursor: pointer;
+}
+
+.form-actions{
+	background: transparent;
+	border: none;
+}
+
+/*
+ * WordPress classes
+ */
 .aligncenter{
 	display: block;
 	margin: 1.5em auto;
@@ -110,7 +125,6 @@ article, .article, aside{
 }
 
 article h2,
-#respond h3,
 .article header,
 .menu > li{
 	#translucent .background(#fff, .4);
@@ -193,6 +207,16 @@ article, .article{
 	}
 	.comment-meta{
 		display: none;
+	}
+}
+
+#respond{
+	.form-submit{
+		display: none;
+	}
+
+	.form-allowed-tags, code{
+		font-size: .85em;
 	}
 }
 
