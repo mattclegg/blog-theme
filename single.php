@@ -15,6 +15,9 @@
                     <?php the_content() ?>
                 </div>
             </article>
+
+
+            <?php comments_template() ?>
         </div>
 
         <aside class="span2">
