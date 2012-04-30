@@ -126,3 +126,13 @@ function theme_init_styles(){
     wp_enqueue_style('theme', get_stylesheet_directory_uri().'/assets/styles/theme.less');
 }
 add_action('init', 'theme_init_styles');
+
+/**
+ * Removing avatar dimensions to avoid ratio loss in responsive
+ * @param $html
+ * @return mixed
+ */
+function theme_filter_get_avatar($html){
+    return preg_replace("/height='\d+' width='\d+' /sU", '', $html);
+}
+add_filter('get_avatar', 'theme_filter_get_avatar', 10, 1);
