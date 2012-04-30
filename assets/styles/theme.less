@@ -239,6 +239,10 @@ aside{
 		}
 	}
 
+	.about{
+		margin-bottom: 0;
+	}
+
 	.widget, .menu{
 		list-style: none;
 		margin: 0;
@@ -289,8 +293,24 @@ aside{
  */
 @import '../../vendor/bootstrap/less/responsive-767px-max.less';
 
+@media (max-width: 767px){
+	.about{
+		display: none;
+	}
+}
+
 @media (min-width: 768px) and (max-width: 979px) {
 	#grid > .core(42px, 20px);
+	#grid > .input(42px, 20px);
+
+	aside{
+		.menu-item{
+			a::after{
+				display: none;
+				font-family: @baseFontFamily;
+			}
+		}
+	}
 }
 
 //@media (min-width: 1200px) {
