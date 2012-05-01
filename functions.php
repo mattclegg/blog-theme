@@ -136,3 +136,16 @@ function theme_filter_get_avatar($html){
     return preg_replace("/height='\d+' width='\d+' /sU", '', $html);
 }
 add_filter('get_avatar', 'theme_filter_get_avatar', 10, 1);
+
+/**
+ * Enables proper HTTPS detection with WordPress and Alwaysdata
+ */
+function alwaysdata_ssl()
+{
+        if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+        {
+                $_SERVER['HTTPS'] = 'on';
+                $_SERVER['SERVER_PORT'] = 443;
+        }
+}
+add_action('init', 'alwaysdata_ssl');
