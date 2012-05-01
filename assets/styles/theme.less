@@ -23,6 +23,9 @@ body{
 		&::after{
 			content: ", ";
 		}
+		&:last-of-type::after{
+			content: ".";
+		}
 
 		&.heading{
 			font-weight: bold;
