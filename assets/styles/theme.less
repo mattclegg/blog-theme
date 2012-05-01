@@ -90,12 +90,14 @@ img[src*='static.flickr.com']{
 			color: @textColor;
 			font-family: @monoFontFamily;
 			font-size: .8em;
+			text-shadow: none;
 		}
 	}
 
 	h1{
 		color: #fff;
 		font-size: 2.7em;
+		text-shadow: 0 0 5px @greenLight;
 
 		&::before{
 			content: '{"title": "';
@@ -297,11 +299,65 @@ aside{
 	.about{
 		display: none;
 	}
+
+	.input-large,
+	.input-xlarge,
+	.input-xxlarge,
+	input[class*="span"],
+	select[class*="span"],
+	textarea[class*="span"],
+	.uneditable-input{
+		min-height: 0;
+	}
+}
+
+@media (max-width: 979px){
+	#header{
+		h1{
+			&::before, &::after{
+				content: "";
+			}
+		}
+
+		blockquote{
+			display: none;
+		}
+	}
+
+	article, .article{
+		height: auto;
+
+		.excerpt{
+			max-height: none;
+		}
+	}
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
 	#grid > .core(42px, 20px);
 	#grid > .input(42px, 20px);
+
+	// FORM FIELDS
+	// -----------
+	// Make span* classes full width
+	.input-large,
+	.input-xlarge,
+	.input-xxlarge,
+	input[class*="span"],
+	select[class*="span"],
+	textarea[class*="span"],
+	.uneditable-input {
+		.input-block-level();
+		min-height: 0;
+	}
+	// But don't let it screw up prepend/append inputs
+	.input-prepend input,
+	.input-append input,
+	.input-prepend input[class*="span"],
+	.input-append input[class*="span"] {
+		display: inline-block; // redeclare so they don't wrap to new lines
+		width: auto;
+	}
 
 	aside{
 		.menu-item{
