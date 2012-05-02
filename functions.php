@@ -156,4 +156,4 @@ function alwaysdata_ssl()
                 $_SERVER['SERVER_PORT'] = 443;
         }
 }
-add_action('init', 'alwaysdata_ssl');
+add_action('after_setup_theme', 'alwaysdata_ssl');
