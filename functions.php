@@ -137,6 +137,14 @@ function theme_filter_get_avatar($html){
 }
 add_filter('get_avatar', 'theme_filter_get_avatar', 10, 1);
 
+
+function theme_cleanup_scripts(){
+	wp_deregister_script('jquery');
+	wp_deregister_script('jquery-form');
+}
+add_action('init', 'theme_cleanup_scripts');
+
+
 /**
  * Enables proper HTTPS detection with WordPress and Alwaysdata
  */
