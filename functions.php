@@ -137,6 +137,21 @@ function theme_filter_get_avatar($html){
 }
 add_filter('get_avatar', 'theme_filter_get_avatar', 10, 1);
 
+/**
+ * Letting the browser loading HTTPS images or not
+ *
+ * @param $content
+ * @return mixed
+ */
+function theme_fix_assets_uri($content){
+	if (preg_match('#https?://farm\d+.static.?flickr.com#U', $content)){
+		$content = preg_replace('#https?:(//farm\d+.static.?flickr.com)#U', '\\1', $content);
+	}
+
+	return $content;
+}
+add_filter('the_content', 'theme_fix_assets_uri');
+
 
 function theme_cleanup_scripts(){
 	wp_deregister_script('jquery');
