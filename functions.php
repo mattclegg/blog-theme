@@ -157,7 +157,10 @@ function theme_cleanup_scripts(){
 	wp_deregister_script('jquery');
 	wp_deregister_script('jquery-form');
 }
-add_action('init', 'theme_cleanup_scripts');
+
+if (!is_admin()){
+	add_action('init', 'theme_cleanup_scripts');
+}
 
 
 /**
