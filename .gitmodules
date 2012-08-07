@@ -3,7 +3,7 @@
 	url = https://github.com/twitter/bootstrap.git
 [submodule "vendor/wp-theme-toolkit"]
 	path = vendor/wp-theme-toolkit
-	url = git@github.com:oncletom/wp-theme-toolkit.git
+	url = https://github.com/oncletom/wp-theme-toolkit.git
 [submodule "vendor/wp-less"]
 	path = vendor/wp-less
-	url = git@github.com:oncletom/wp-less.git
+	url = https://github.com/oncletom/wp-less.git
