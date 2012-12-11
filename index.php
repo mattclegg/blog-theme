@@ -5,7 +5,7 @@
         <div class="span10" role="main">
             <div class="row">
                 <?php while(have_posts()): the_post() ?>
-                <div class="span5">
+                <div class="span10">
                     <article>
                         <h2><a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title()) ?>" rel="bookmark"><?php the_title() ?></a></h2>
 

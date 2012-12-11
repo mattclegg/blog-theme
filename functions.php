@@ -5,8 +5,7 @@ add_theme_support('automatic-feed-links');
 add_image_size('cover-medium', 380, 100, false);
 add_image_size('cover', 780, 250, false);
 
-
-require dirname(__FILE__).'/vendor/wp-less/bootstrap-for-theme.php';
+require dirname(__FILE__).'/../../plugins/wp-less/bootstrap-for-theme.php';
 $WPLessPlugin->dispatch();
 
 /*
@@ -124,6 +123,7 @@ function theme_comment_form( $args = array(), $post_id = null ) {
  */
 function theme_init_styles(){
     wp_enqueue_style('theme', get_stylesheet_directory_uri().'/assets/styles/theme.less');
+    wp_enqueue_script('main', get_stylesheet_directory_uri().'/assets/js/main.js', array(), '', true);
 }
 add_action('init', 'theme_init_styles');
 
