@@ -18,7 +18,7 @@
                             <li class="comments"><a href="<?php comments_link() ?>">
                                 <?php comments_number(
                                         '<span class="value">0</span> commentaires',
-                                        '<span class="value">%</span> commentaire',
+                                        '<span class="value">1</span> commentaire',
                                         '<span class="value">%</span> commentaires'
                                     ) ?>
                             </a></li>
