@@ -101,13 +101,13 @@ function theme_comment_form( $args = array(), $post_id = null ) {
             <?php endif; ?>
             <?php echo apply_filters( 'comment_form_field_comment', $args['comment_field'] ); ?>
             <?php echo $args['comment_notes_after']; ?>
+            <?php do_action( 'comment_form', $post_id ); ?>
             <p class="form-actions">
                 <button name="submit" class="btn btn-large" type="submit" id="<?php echo esc_attr( $args['id_submit'] ); ?>">
                     <?php echo esc_html( $args['label_submit'] ); ?>
                 </button>
                 <?php comment_id_fields( $post_id ); ?>
             </p>
-            <?php do_action( 'comment_form', $post_id ); ?>
         </form>
         <?php endif; ?>
     </div><!-- #respond -->
