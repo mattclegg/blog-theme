@@ -2,6 +2,7 @@
 @import "variables.less";
 @import "bootstrap.less";
 @import "stacked.less";
+@import "services.less";
 
 // Generating grid
 #grid > .core(@gridColumnWidth, @gridGutterWidth);
@@ -117,7 +118,7 @@ img[src*='static.flickr.com']{
  * Header
  */
 #header{
-	margin: 3em auto;
+	margin: .5em auto 3em;
 
 	a{
 		color: @linkColorHover;
@@ -143,8 +144,20 @@ img[src*='static.flickr.com']{
 	}
 
 	h1{
-		color: @grayDark;
 		font-size: 4em;
+        text-shadow: 1px 1px 1px #2f1f47;
+
+        &, a{
+          color: @white;
+        }
+
+        a:hover, a:focus{
+          color: @grayLighter;
+        }
+
+        span{
+          color: #ccd121;
+        }
 	}
 
 	blockquote{
@@ -349,6 +362,10 @@ aside{
 		min-height: 0;
 	}
 
+    #header h1{
+      font-size: @fontSizeLarge * 2;
+    }
+
     article, .article{
       min-height: 0;
     }
@@ -360,14 +377,6 @@ aside{
 }
 
 @media (max-width: 979px){
-	#header{
-		h1{
-			&::before, &::after{
-				content: "";
-			}
-		}
-	}
-
 	article, .article{
 		height: auto;
 
@@ -405,8 +414,8 @@ aside{
 
 	aside{
 		&.sticky{
-                	margin-left: 600px + @gridGutterWidth*2;
-        	}
+          margin-left: 600px + @gridGutterWidth*2;
+        }
 
 		.menu-item{
 			a::after{

@@ -162,6 +162,16 @@ if (!is_admin()){
 	add_action('init', 'theme_cleanup_scripts');
 }
 
+function theme_filter_title($output, $show){
+    if ($show === 'name'){
+        $output = str_replace('Oncle Tom', '<span>Oncle Tom</span>', $output);
+    }
+
+    return $output;
+}
+
+add_filter('bloginfo', 'theme_filter_title', 20, 2);
+
 
 /**
  * Enables proper HTTPS detection with WordPress and Alwaysdata

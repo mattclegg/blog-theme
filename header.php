@@ -16,9 +16,31 @@
 </head>
 <body <?php body_class() ?>>
 
+<div class="container">
+    <div class="navbar" id="services">
+        <div class="navbar-inner">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <a class="brand" href="https://case.oncle-tom.net/slash-me">@ Thomas Parisot</a>
+            <div class="nav-collapse collapse">
+                <nav class="nav">
+                    <li><a href="http://cyneticmonkey.com/expertise">Expertise Web</a></li>
+                    <li class="active"><a href="https://case.oncle-tom.net">Blog</a></li>
+                    <li><a href="http://cyneticmonkey.com/trainings">Formations</a></li>
+                    <li><a href="http://cyneticmonkey.com/talks">Conférences</a></li>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
 <header id="header">
     <div class="container">
-        <h1><a href="<?php echo home_url() ?>" rel="home"><?php bloginfo('title') ?></a></h1>
+        <h1><a href="<?php echo home_url() ?>" rel="home"><?php bloginfo('name') ?></a></h1>
         <blockquote class="description"><?php bloginfo('description') ?></blockquote>
     </div>
 </header>
