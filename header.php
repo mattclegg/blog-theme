@@ -28,7 +28,7 @@
             <a class="brand" href="https://case.oncle-tom.net/slash-me">@ Thomas Parisot</a>
             <div class="nav-collapse collapse">
                 <nav class="nav">
-                    <li><a href="http://cyneticmonkey.com/expertise">Expertise Web</a></li>
+                    <li><a href="http://cyneticmonkey.com/">Expertise Web</a></li>
                     <li class="active"><a href="https://case.oncle-tom.net">Blog</a></li>
                     <li><a href="http://cyneticmonkey.com/trainings">Formations</a></li>
                     <li><a href="http://cyneticmonkey.com/talks">Conférences</a></li>
