@@ -38,7 +38,7 @@
     </div>
 </div>
 
-<header id="header">
+<header class="header">
     <div class="container">
         <h1><a href="<?php echo home_url() ?>" rel="home"><?php bloginfo('name') ?></a></h1>
         <blockquote class="description"><?php bloginfo('description') ?></blockquote>
