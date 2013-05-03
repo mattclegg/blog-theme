@@ -161,7 +161,7 @@ if (!is_admin()){
 
 function theme_filter_title($output, $show){
     if ($show === 'name'){
-        $output = str_replace('Oncle Tom', '<span>Oncle Tom</span>', $output);
+        $output = str_replace('.io', '<span>.io</span>', $output);
     }
 
     return $output;
