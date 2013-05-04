@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
     <meta name="viewport" content="initial-scale=1.0" />
-    <title><?php wp_title() ?></title>
+    <title><?php wp_title('&mdash;') ?></title>
     <?php wp_head() ?>
     <link rel="publisher" href="https://plus.google.com/113450102076209289116" />
     <link rel="author" href="https://plus.google.com/113450102076209289116" />
