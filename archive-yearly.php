@@ -18,9 +18,10 @@
           <?php endwhile ?>
           </ul>
 
-            <?php //get_template_part('loop', 'navigation') ?>
         </div>
       </div>
+
+      <div class="row"><?php get_template_part('loop', 'navigation') ?></div>
     </div>
 
     <aside class="span2">
