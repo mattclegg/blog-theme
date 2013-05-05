@@ -1,7 +1,7 @@
 <?php if (comments_open()): ?>
 <div id="comments" class="article fluid-height">
     <header>
-        <h2><?php comments_number('0 commentaires', '1 commentaire', '% commentaires') ?> <small>— <a href="#respond">En ajouter un ?</a></small></h2>
+        <h2><?php comments_number('0 commentaires', '1 commentaire', '% commentaires') ?> <small><a href="#respond">En ajouter un ?</a></small></h2>
     </header>
 
     <?php if(have_comments()): ?>
