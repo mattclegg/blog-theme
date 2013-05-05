@@ -72,9 +72,42 @@ article, .article{
   }
 }
 
+.compact-archives{
+  list-style: none;
+  margin-left: 0;
+
+  .archive-item{
+    margin-bottom: .5em;
+
+    &:hover time{
+      color: @black;
+    }
+  }
+
+  time{
+    color: lighten(@textColor, 10);
+    display: inline-block;
+    padding-right: 1em;
+    text-align: right;
+    width: 6.5em;
+  }
+}
+
 @media (max-width: 767px){
   article, .article{
     min-height: 0;
+  }
+
+  .compact-archives{
+    .archive-item{
+      margin-bottom: 1em;
+    }
+
+    time{
+      display: block;
+      font-weight: bold;
+      text-align: left;
+    }
   }
 }
 

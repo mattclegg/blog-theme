@@ -169,6 +169,30 @@ function theme_filter_title($output, $show){
 
 add_filter('bloginfo', 'theme_filter_title', 20, 2);
 
+/**
+ * Tweaks a little bit the query under certain circumstances
+ *
+ * @param $query WP_Query
+ */
+function theme_alter_query_arguments($query){
+  if (is_main_query() && is_year() && is_date()){
+    $query->set('nopaging', true);
+  }
+}
+add_action('pre_get_posts', 'theme_alter_query_arguments');
+
+
+/**
+ * Uses a custom template for yearly archives
+ *
+ * @param  $location string Original template location found
+ * @return String Template location
+ */
+function theme_filter_yearly_archives($location){
+    return is_year() ? TEMPLATEPATH . '/archive-yearly.php' : $location;
+}
+add_filter('date_template', 'theme_filter_yearly_archives');
+
 
 /**
  * Enables proper HTTPS detection with WordPress and Alwaysdata

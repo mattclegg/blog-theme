@@ -52,6 +52,15 @@ h3{
   margin-top: 1.5em;
 }
 
+h2 small{
+  color: lighten(@textColor, 10%);
+  vertical-align: middle;
+
+  &:before{
+    content: "— "
+  }
+}
+
 label{
 	cursor: pointer;
 }
