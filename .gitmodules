@@ -1,9 +1,9 @@
 [submodule "vendor/bootstrap"]
 	path = vendor/bootstrap
-	url = git@github.com/twbs/bootstrap.git
+	url = git@github.com:twbs/bootstrap.git
 [submodule "vendor/wp-theme-toolkit"]
 	path = vendor/wp-theme-toolkit
-	url = git@github.com/oncletom/wp-theme-toolkit.git
+	url = git@github.com:oncletom/wp-theme-toolkit.git
 [submodule "vendor/wp-less"]
 	path = vendor/wp-less
-	url = git@github.com/oncletom/wp-less.git
+	url = git@github.com:oncletom/wp-less.git
